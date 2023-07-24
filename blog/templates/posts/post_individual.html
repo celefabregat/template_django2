@@ -1,6 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}posts.titulo{% endblock %}
+{% block contenido %}
 <br>
+<a id="boton_volver" href="{% url 'apps.posts:posts' %}">volver a noticias</a>
+
+<br>
+<section>
 <li>{{ posts.titulo }}</li>
 <li>{{ posts.subtitulo }}</li>
 <li>{{ posts.categoria }}</li>
+</section>
 <br>
 <li>{{ posts.texto }}</li>
+<img src="{{ posts.imagen.url }}" alt="">
+{% endblock %}

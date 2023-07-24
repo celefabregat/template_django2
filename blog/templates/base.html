@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/icon.png' %}" type="image/x-icon">
     {% load bootstrap_icons %}
 <title>Grupo.py | {% block title %}{% endblock title %}</title>
 <!-- Required meta tags -->
@@ -25,7 +26,7 @@
             <ul class="menu">
             <li><a href="{% url 'index' %}">inicio</a></li>
             <li><a href="#">nosotros</a></li>
-            <li><a href="#">noticias</a></li>
+            <li><a href="{% url 'apps.posts:posts' %}">noticias</a></li>
             <li><a href="#">equipo</a></li>
             <li><a href="#">trabajos</a></li>
         </ul></nav>
