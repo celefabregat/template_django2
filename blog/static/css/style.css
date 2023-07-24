@@ -61,4 +61,5 @@ nav{
 
 #content{
     min-height: calc(100vh - 90px - 55px);
+    background: darkgrey;;
 }
