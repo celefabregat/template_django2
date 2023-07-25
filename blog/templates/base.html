@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
     <link rel="shortcut icon" href="{% static 'img/icon.png' %}" type="image/x-icon">
     {% load bootstrap_icons %}
 <title>Grupo.py | {% block title %}{% endblock title %}</title>
@@ -19,16 +20,22 @@
 
 <body>
 <header>
-        <a href="{% url 'index' %}"><i class='icon-header'>
+        <a href="{% url 'home' %}"><i class='icon-header'>
         <img class='icon-header' src="{% static 'svg/overwolflogo64.svg' %}" alt="">
         </i></a>
         <nav>  
             <ul class="menu">
-            <li><a href="{% url 'index' %}">inicio</a></li>
-            <li><a href="#">nosotros</a></li>
-            <li><a href="{% url 'apps.posts:posts' %}">noticias</a></li>
-            <li><a href="#">equipo</a></li>
-            <li><a href="#">trabajos</a></li>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'nosotros' %}">IR A NOSOTROS</a>
+            <li><a href="{% url 'noticias:listar' %}">NOTICIAS</a></li>
+			{% if user.is_authenticated %}
+			<strong>Hola {{ user.username }}</strong>
+			<li><a href="{% url 'logout' %}">LOGOUT</a></li>
+		{% else %}
+			<li><a href="{% url 'login' %}">LOGIN</a></li>
+			<li><a href="{% url 'usuarios:registro' %}">Registrar</a></li>
+		{% endif %}
+		
         </ul></nav>
 </header>
 <main> 
