@@ -4,7 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
+    <link rel="stylesheet" href={% block login %} {% endblock login %}>
     <link rel="shortcut icon" href="{% static 'img/icon.png' %}" type="image/x-icon">
     {% load bootstrap_icons %}
 <title>Grupo.py | {% block title %}{% endblock title %}</title>

@@ -1,13 +1,39 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block login %} "{% static 'css/login.css' %}" {% endblock login %}
 {% block title %}LOGIN{% endblock %}
 
 {% block contenido %}
-			<form method="POST">{%csrf_token%}
+			{% comment %} <form method="POST">{%csrf_token%}
 				{{form.errors}}
 				<input type="text" name="username" placeholder="USUARIO">
 				<input type="password" name="password" placeholder="PASSWORD">
 
 				<input type="submit" name="" value="ENVIAR">
-			</form>
+			</form> {% endcomment %}
+	<br>
+
+	<div method="POST" class="login-box">
+		<h2>Animated Login</h2>
+		<form method="POST">{%csrf_token%}
+			{{form.errors}}
+		<div class="user-box">
+			<input type="text" name="username" placeholder="USUARIO">
+			<label>User name</label>
+		</div>
+		<div class="user-box">
+			<input type="password" name="password" placeholder="PASSWORD">
+			<label>Password</label>
+		</div>
+		<input type="submit" name="" value="login">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		
+			
+		
+		</form>
+	</div>
+			
 {% endblock %}

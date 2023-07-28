@@ -5,14 +5,17 @@
 
 
 {% block contenido %}
-	<div class="submenu">
+<br>
+	<span class="submenu">
 
-		<a href="{% url 'noticias:listar' %}">TODAS</a>
+		<a href="{% url 'noticias:listar' %}" class="btn btn-primary">TODAS</a>
 		{% for cat in categorias %}
-			<a href="?id={{cat.pk}}">{{cat.nombre}}</a>
+			<a href="?id={{cat.pk}}" class="btn btn-primary">{{cat.nombre}}</a>
 		{% endfor %}
+</span>
 
-	</div>
+<br>
+<br>
 
 	<h1>ACA VOY A LISTAR LAS NOTICIAS</h1>
 
@@ -27,15 +30,17 @@
 		<br><br>
     {% endcomment %}
 	<br>
-		<div class="card">
+		<aside class="card">
+			
+			<div class="card-body">
 			<img src="{{noti.imagen.url}}" width="100" height="100">
 		
-			<div class="card-body">
+			
 			<h5 class="card-title">{{noti.titulo}}</h5>
 			<p class="card-text">{{noti.cuerpo}}</p>
 			<a href="{% url 'noticias:detalle' noti.pk %}" class="btn btn-primary">Ir a Noticia</a>
 			</div>
-		</div>
+		</aside>
     <br>
 	{% endfor %}
 {% endblock contenido %}
